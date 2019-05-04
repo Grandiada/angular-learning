@@ -1,0 +1,40 @@
+<div>
+    <child-comp>
+        <h1>Buyer list {{items[items.length-1].purchase}}</h1>
+    </child-comp>
+</div>
+<div class="panel">
+    <div class="form-inline">
+        <div class="form-group">
+            <div class="col-md-8">
+                <input class="form-control" [(ngModel)]="text" placeholder="name">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-6">
+                <input class="form-control" [(ngModel)]="price" placeholder="price">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-8">
+                <button class="btn btn-default" (click)="addItem(text,price)">Add</button>
+            </div>
+        </div>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Bought</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items">
+                <td>{{item.purchase}}</td>
+                <td>{{item.price}}</td>
+                <td><input type="checkbox" [(ngModel)]="item.done" /></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
