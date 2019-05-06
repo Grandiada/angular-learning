@@ -18,6 +18,10 @@ class Item {
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+    name: string = "Snowden";
+    age: number = 24;
+    clicks: number = 0;
+
     items: Item[] =
         [
             { purchase: "Хлеб", done: false, price: 15.9 },
@@ -25,6 +29,10 @@ export class AppComponent {
             { purchase: "Картофель", done: true, price: 22.6 },
             { purchase: "Сыр", done: false, price: 310 }
         ];
+
+    onChanged(increased: boolean) {
+        increased == true ? this.clicks++ : this.clicks--;
+    }
 
     addItem(text: string, price: number): void {
 
